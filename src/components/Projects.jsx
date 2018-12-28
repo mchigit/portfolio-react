@@ -7,25 +7,9 @@ import website from "../images/website.svg";
 class Projects extends Component {
 
     renderProjectLinks = (links) => {
-        let linkElements;
-        const linksLength = Object.keys(links).length;
-        if (linksLength === 0) return null;
-        else if (linksLength === 2) {
-            linkElements = 
-                <div>
-                    <a href={links.github} rel="noopener noreferrer" target="_blank"><img className="project-link-icon" src={github} alt="github"></img></a>
-                    <a href={links.website} rel="noopener noreferrer" target="_blank"><img className="project-link-icon" src={website} alt="github"></img></a>
-                </div>
-            ;
-        } else {
-            if (links.github) {
-                linkElements =  <a href={links.github} rel="noopener noreferrer" target="_blank"><img className="project-link-icon" src={github} alt="github"></img></a>
-            } else {
-                linkElements = <a href={links.website} rel="noopener noreferrer" target="_blank"><img className="project-link-icon" src={website} alt="github"></img></a>
-            }
-        }
-
-        return linkElements;
+      return links.map((link, key) => (
+        <a href={link.url} key={key}  rel="noopener noreferrer" target="_blank"><img className="project-link-icon" src={require(`../images/${link.img}`)} alt="link icons"></img></a>
+      ));
     }
 
     renderProjects = (projectsArray) => {
