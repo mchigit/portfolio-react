@@ -5,9 +5,8 @@ body {
   font-family: "Helvetica Neue",sans-serif;
   font-weight: lighter;
   height: 100vh;
-  background: linear-gradient( rgba(20,20,20, .5), rgba(20,20,20, .5)), url("./images/home-background.jpg") no-repeat 50% 50%;
+  background: linear-gradient( rgba(20,20,20, .3), rgba(20,20,20, .3)), url("./images/home-background.jpg") no-repeat 50% 50%;
   background-attachment: fixed; 
-  /* background: url("./images/home-background.jpg") no-repeat 50% 50%; */
   background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

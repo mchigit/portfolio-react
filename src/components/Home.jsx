@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/Home.scss";
-import ReactFullpage from '@fullpage/react-fullpage';
 
 
 class Home extends Component {
@@ -19,24 +18,10 @@ class Home extends Component {
     }
 
     render() {
-
         return (
-            <ReactFullpage
-            licenseKey="asd"
-            render={({ state, fullpageApi }) => {
-              return (
-                <ReactFullpage.Wrapper>
-                  <div className="section">
-                    {this.homeSection()}
-                  </div>
-                  <div className="section">
-                    <p>Section 2</p>
-                  </div>
-                    
-                </ReactFullpage.Wrapper>
-              );
-            }}
-          />
+            <div>
+                {this.homeSection()}
+            </div>
         );
     }
 }

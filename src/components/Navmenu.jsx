@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Navmenu.scss";
+import { Link } from "react-router-dom";
 
 class Navmenu extends Component {
 
@@ -28,14 +29,13 @@ class Navmenu extends Component {
                             <i className="fa fa-bars fa-2x" onClick={this.toggleItemClass}></i>
                         </div>
                         <div className="title">
-                            <a href="/">Michael Chi</a>
+                            <Link to="/">Michael Chi</Link>
                         </div>
                         <div className="menu-items">
                             <ul className={ulClass}>
-                                {/* <li><a href="#about">About</a></li> */}
-                                <li><a href="#projects">Projects</a></li>
-                                <li><a href="#work">Work</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><Link to="/projects">Projects</Link></li>
+                                <li><Link to="/work">Work</Link></li>
+                                <li><Link to="#contact">Contact</Link></li>
                             </ul>
                         </div>
                     </nav>

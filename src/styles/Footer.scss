@@ -1,3 +1,5 @@
+$break-small: 768px;
+
 .footer {
     position: fixed;
     width: 100%;
@@ -5,6 +7,17 @@
     bottom: 0;
     color: white;
     padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media screen and (max-width: $break-small) {
+        justify-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+        background-color: black;
+    }
 }
 
 .footer span {
