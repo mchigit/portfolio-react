@@ -31,8 +31,6 @@ class AppRouter extends React.Component {
                     <Navmenu />
                     <Switch>
                         <Route path="/" exact component={Home}></Route>
-                        <Route path="/projects" render={(props) => <Projects {...props} projects={this.state.projects} />}></Route>
-                        <Route path="/work" render={(props) => <Work {...props} works={this.state.works} />} />
                     </Switch>
                 </div>
             </Router>

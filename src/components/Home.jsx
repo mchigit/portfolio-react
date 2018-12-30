@@ -26,7 +26,7 @@ class Home extends Component {
     homeSection = () => {
         return (
             <div>
-                <div className="container">
+                <div className="container home">
                     <div className="intro">
                         <h1>Hi, My name is Michael Chi</h1>
                         <p>I'm a full-stack software developer</p>
@@ -40,18 +40,20 @@ class Home extends Component {
         return (
             <div>
                 {this.homeSection()}
-                <div className="section-wrapper">
+                <div className="sections">
+                <div className="section-wrapper" id="work">
                     <div className="section-title">
                         <h1>Work Experience</h1>
                     </div>
                     <Work works={this.state.works} />
                 </div>
-                <div className="section-wrapper">
+                <div className="section-wrapper" id="projects">
                     <div className="section-title">
                         <h1>Projects</h1>
 
                     </div>
                     <Projects projects={this.state.projects} />
+                </div>
                 </div>
             </div>
         );

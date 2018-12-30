@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Navmenu.scss";
 import { Link } from "react-router-dom";
+import Headroom from "react-headroom";
 
 class Navmenu extends Component {
 
@@ -11,6 +12,21 @@ class Navmenu extends Component {
         }
     }
 
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+
+    }
+
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
 
     toggleItemClass = () => {
         this.setState((prevState) => ({
@@ -20,26 +36,30 @@ class Navmenu extends Component {
 
     render() {
 
-        const ulClass = this.state.showClass ? ["showing"]: [];
+        const ulClass = this.state.showClass ? ["showing"] : [];
 
-        return(
+        return (
+            <Headroom>
                 <header>
                     <nav>
                         <div className="menu-icon">
                             <i className="fa fa-bars fa-2x" onClick={this.toggleItemClass}></i>
                         </div>
                         <div className="title">
-                            <Link to="/">Michael Chi</Link>
+                            <Link onClick={this.scrollToTop} to="/">Michael Chi</Link>
                         </div>
                         <div className="menu-items">
                             <ul className={ulClass}>
-                                <li><Link to="/projects">Projects</Link></li>
-                                <li><Link to="/work">Work</Link></li>
-                                <li><Link to="#contact">Contact</Link></li>
+                                {/* <li><Link to="#work">Work</Link></li>
+                                <li><Link to="#projects">Projects</Link></li>
+                                <li><Link to="#contact">Contact</Link></li> */}
+                                <li><a className="navlinks" onClick={this.toggleItemClass} href="#work">Work</a></li>
+                                <li><a className="navlinks" onClick={this.toggleItemClass} href="#projects">Projects</a></li>
                             </ul>
                         </div>
                     </nav>
                 </header>
+            </Headroom>
         )
     }
 }

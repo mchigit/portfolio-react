@@ -9,11 +9,11 @@ class Work extends Component {
         const workTimeline = works.map((work, key) => (
             <VerticalTimelineElement key={key}
              className="vertical-timeline-element--work"
-              date={work.date}
               iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
               >
                 <h3 className="vertical-timeline-element-title">{work.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{work.company}</h4>
+                <h4>{work.date}</h4>
                 <p>
                     {work.description}
                 </p>
@@ -27,7 +27,7 @@ class Work extends Component {
         return (
             <div className="container work">
                 <div className="work-wrapper">
-                    <VerticalTimeline layout="1-column" className="work-timeline">
+                    <VerticalTimeline  className="work-timeline">
                        {this.renderWorkExperience(this.props.works)}
                     </VerticalTimeline>
                 </div>

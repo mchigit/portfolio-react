@@ -1,6 +1,5 @@
 .container {
     width: 80%;
-    height: 100vh;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -8,20 +7,30 @@
     margin: auto;
 }
 
+.home {
+    height: 100vh;
+    background: linear-gradient( rgba(20,20,20, 0), black 95%), url("../images/home-background.jpg") no-repeat 50% 50%;
+   // background-attachment: fixed; 
+    background-size: cover;
+    width: 100% !important;
+}
+
 .intro {
     text-align: center;
     color: white;
 }
 
+.sections {
+    background: linear-gradient(black, rgba(0,0,0,0.7), black)
+}
+
 .section-wrapper {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    margin-top: 50px;
+    padding-top: 100px;
 }
 
 .section-title {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
