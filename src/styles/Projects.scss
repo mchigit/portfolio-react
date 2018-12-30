@@ -13,7 +13,7 @@ $break-smallest: 500px;
 
 .projects-wrapper {
     display: grid;
-    margin-top: 150px;
+    // margin-top: 150px;
     grid-template-columns: repeat(3, 1fr);
     @media screen and (max-width: $break-medium) {
         grid-template-columns: repeat(2, 1fr);

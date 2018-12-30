@@ -12,3 +12,19 @@
     text-align: center;
     color: white;
 }
+
+.section-wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin-top: 50px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.section-title h1 {
+    color: white;
+}
