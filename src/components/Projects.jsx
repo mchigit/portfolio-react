@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import "../styles/Projects.scss";
-import github from "../images/github-logo.svg";
-import website from "../images/website.svg";
 
 class Projects extends Component {
 

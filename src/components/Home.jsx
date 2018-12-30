@@ -1,8 +1,24 @@
 import React, { Component } from "react";
 import "../styles/Home.scss";
+import Projects from "./Projects";
+import Work from "./Work";
+const ProjectsArray = require("../data/Projects.json").projects;
 
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            projects: []
+        }
+    }
+
+    componentWillMount() {
+        this.setState({
+            projects: ProjectsArray
+        })
+    }
 
     homeSection = () => {
         return (

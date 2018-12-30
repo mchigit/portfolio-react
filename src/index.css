@@ -5,7 +5,7 @@ body {
   font-family: "Helvetica Neue",sans-serif;
   font-weight: lighter;
   height: 100vh;
-  background: linear-gradient( rgba(20,20,20, .3), rgba(20,20,20, .3)), url("./images/home-background.jpg") no-repeat 50% 50%;
+  background: linear-gradient( rgba(20,20,20, .2), rgba(20,20,20, .2)), url("./images/home-background.jpg") no-repeat 50% 50%;
   background-attachment: fixed; 
   background-size: cover;
   -webkit-font-smoothing: antialiased;

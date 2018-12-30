@@ -39,7 +39,14 @@ $break-smallest: 500px;
 
 .project-card {
     background-color: #5B6073;
-    padding: 20px 40px 40px 40px;
+    padding: 20px 60px;
+
+    @media screen and (max-width: $break-small) {
+        padding: 20px 30px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .project-image img {

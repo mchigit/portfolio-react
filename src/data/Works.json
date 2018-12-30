@@ -1,0 +1,25 @@
+{
+    "works": [
+        {
+            "title": "Software Developer",
+            "date": "Sept 2018 - Dec 2018",
+            "company": "Freshii",
+            "description": "Developed and launched Freshii 2.0 with online ordering feature using Vue. Implemented Google Cloud Functions with auto testing and deployment."
+        }, {
+            "title": "Software Developer",
+            "date": "Jan 2018 - Apr 2018",
+            "company": "Sortable",
+            "description": "Created complex report scheduling system using Scala and Angular JS. Reduced AWS costs and increased Hive query performance by creating custom scripts using Javascript"
+        }, {
+            "title": "Core Software Developer",
+            "date": "May 2017 - Aug 2017",
+            "company": "IBM Canada Ltd",
+            "description": "Implemented SSO feature and IP Address Whitelist system using Node, React and PostgreSQL"
+        }, {
+            "title": "Technical Analyst",
+            "date": "Sept 2016 - Dec 2016",
+            "company": "Scotiabank",
+            "description": "Created a reporting tool using ASP.NET, and increased load time of exisitng web applications by 50%"
+        }
+    ]
+}
