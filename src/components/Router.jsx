@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Projects from "./Projects";
 import Navmenu from "./Navmenu";
-import Work from "./Work";
 const ProjectsArray = require("../data/Projects.json").projects;
 const WorksArray = require("../data/Works.json").works;
 

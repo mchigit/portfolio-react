@@ -5,13 +5,6 @@ import "../styles/Work.scss";
 import WorkIcon from '@material-ui/icons/Work';
 
 class Work extends Component {
-
-    icon = () => {
-        return <i class="material-icons">
-            work
-        </i>
-    }
-
     renderWorkExperience = (works) => {
         const workTimeline = works.map((work, key) => (
             <VerticalTimelineElement key={key}

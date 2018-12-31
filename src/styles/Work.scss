@@ -1,5 +1,14 @@
+$break-small: 768px;
+
 .work {
     justify-content: flex-start;
+}
+
+.work-wrapper {
+    @media screen and (max-width: $break-small) {
+        width: 100%;
+        padding: 0px;
+    }
 }
 
 .work-summary {
@@ -10,14 +19,9 @@
 
 .work-logo img {
     height: 50px;
+
+    @media screen and (max-width: $break-small) {
+        height: 35px;
+    }
 }
 
-h3 {
-    font-size: 24px;
-    line-height: 30px;
-    padding-bottom: 10px;
-}
-
-h4 {
-    font-size: 19px;
-}

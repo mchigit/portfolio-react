@@ -55,6 +55,7 @@ class Navmenu extends Component {
                                 <li><Link to="#contact">Contact</Link></li> */}
                                 <li><a className="navlinks" onClick={this.toggleItemClass} href="#work">Work</a></li>
                                 <li><a className="navlinks" onClick={this.toggleItemClass} href="#projects">Projects</a></li>
+                                <li><a target="_blank" href="/Resume.pdf" className="navlinks">Resume</a></li>
                             </ul>
                         </div>
                     </nav>
