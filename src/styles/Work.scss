@@ -1,3 +1,23 @@
 .work {
     justify-content: flex-start;
 }
+
+.work-summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.work-logo img {
+    height: 50px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+    padding-bottom: 10px;
+}
+
+h4 {
+    font-size: 19px;
+}

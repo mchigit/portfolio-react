@@ -2,28 +2,34 @@
     "projects": [
         {
             "title": "Portfolio",
-            "tech": "React, AWS Lambda",
+            "tech": [
+                "React",
+                "AWS Lambda"
+            ],
             "image": "exam-calendar.png",
             "image_alt": "picture for portfolio",
             "detail": "Personal portfolio created in React and AWS Lambda",
             "links": [
                 {
-                    "img": "github-logo.svg",
+                    "text": "VIEW SOURCE CODE",
                     "url": "https://github.com/michaelchi1997/portfolio-react"
                 }, {
-                    "img": "website.svg",
+                    "text": "VISIT WEBSITE",
                     "url": "http://michaelchi.me"
                 }
             ]
         }, {
             "title": "Exam Calendar",
-            "tech": "React, Ruby",
+            "tech": [
+                "React",
+                "Ruby"
+            ],
             "image": "exam-calendar.png",
             "image_alt": "picture for exam calendar",
             "detail": "Calendar for all exams in a semester for University of Waterloo students",
             "links": [
                 {
-                    "img": "website.svg",
+                    "text": "VISIT WEBSITE",
                     "url": "https://calendar.uwwe.ca"
                 }
             ]
