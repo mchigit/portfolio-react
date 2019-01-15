@@ -1,7 +1,31 @@
 import React, { Component } from "react";
 import "../styles/Footer.scss";
+import Dialog from '@material-ui/core/Dialog';
+import ModalContent from './ModalContent';
+
 
 class Footer extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalOpen: true
+        };
+    }
+
+    onContactClicked = (e) => {
+        e.preventDefault();
+        this.setState({
+            modalOpen: true
+        });
+    }
+
+    onModalClose = () => {
+        this.setState({
+            modalOpen: false
+        });
+    }
+
     render() {
         return (
             <div>
@@ -13,9 +37,13 @@ class Footer extends Component {
                         <a href="https://www.linkedin.com/in/michael-chi/" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin-in"></i></a>
                     </span>
                     <span>
-                        <i className="far fa-envelope"></i>
+                        <a href="#" onClick={this.onContactClicked}><i className="far fa-envelope"></i></a>
                     </span>
                 </footer>
+                <Dialog open={this.state.modalOpen} onClose={this.onModalClose}>
+                
+                    <ModalContent handleClose={this.onModalClose} />
+                </Dialog>
             </div>
         );
     }
