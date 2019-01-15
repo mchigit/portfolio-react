@@ -9,40 +9,42 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import axios from "axios";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const DialogTitle = withStyles(theme => ({
     root: {
-      borderBottom: `1px solid ${theme.palette.divider}`,
-      margin: 0,
-      padding: theme.spacing.unit * 2,
+        borderBottom: `1px solid ${theme.palette.divider}`,
+        margin: 0,
+        padding: theme.spacing.unit * 2,
     },
     closeButton: {
-      position: 'absolute',
-      right: theme.spacing.unit,
-      top: theme.spacing.unit,
-      color: theme.palette.grey[500],
+        position: 'absolute',
+        right: theme.spacing.unit,
+        top: theme.spacing.unit,
+        color: theme.palette.grey[500],
     },
-  }))(props => {
+}))(props => {
     const { children, classes, onClose } = props;
     return (
-      <MuiDialogTitle disableTypography className={classes.root}>
-        <Typography variant="h6">{children}</Typography>
-        {onClose ? (
-          <IconButton aria-label="Close" className={classes.closeButton} onClick={onClose}>
-            <CloseIcon />
-          </IconButton>
-        ) : null}
-      </MuiDialogTitle>
+        <MuiDialogTitle disableTypography className={classes.root}>
+            <Typography variant="h6">{children}</Typography>
+            {onClose ? (
+                <IconButton aria-label="Close" className={classes.closeButton} onClick={onClose}>
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </MuiDialogTitle>
     );
-  });
+});
 
 const DialogActions = withStyles(theme => ({
     root: {
-      borderTop: `1px solid ${theme.palette.divider}`,
-      margin: 0,
-      padding: theme.spacing.unit,
+        borderTop: `1px solid ${theme.palette.divider}`,
+        margin: 0,
+        padding: theme.spacing.unit,
     },
-  }))(MuiDialogActions);
+}))(MuiDialogActions);
 
 class ModalContent extends Component {
 
@@ -51,7 +53,8 @@ class ModalContent extends Component {
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
+            loading: false
         }
     }
 
@@ -61,7 +64,41 @@ class ModalContent extends Component {
         });
     };
 
+    handleSendEmail = (e) => {
+        e.preventDefault();
+        let self = this;
+        this.setState({
+            loading: true
+        }, () => {
+            const requestBody = this.state;
+            const cloudFunctionUrl = "https://us-central1-charming-layout-228719.cloudfunctions.net/sendEmail";
+            axios.post(cloudFunctionUrl, requestBody)
+                .then(function (response) {
+                    console.log(response);
+                    self.props.showNotification(true);
+                })
+                .catch(function (error) {
+                    self.props.showNotification(false);
+                    console.log(error);
+                })
+                .finally(() => {
+                    self.setState({
+                        loading: false,
+                        notification: true
+                    });
+                    self.props.handleClose();
+                });
+        });
+    }
+
     render() {
+        const buttonStyle = {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            marginTop: -12,
+            marginLeft: -12,
+        }
         return (
             <div>
                 <DialogTitle onClose={this.props.handleClose} id="form-dialog-title">Send me an email!</DialogTitle>
@@ -103,7 +140,8 @@ class ModalContent extends Component {
                     </div>
                 </DialogContent>
                 <DialogActions>
-                    <Button className="send-email" variant="outlined" color="default">Send Email</Button>
+                    <Button disabled={this.state.loading} onClick={this.handleSendEmail} className="send-email" variant="outlined" color="default">Send Email</Button>
+                    {this.state.loading && <CircularProgress size={24} className={buttonStyle} />}
                 </DialogActions>
             </div>
         );

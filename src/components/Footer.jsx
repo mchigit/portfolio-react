@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import "../styles/Footer.scss";
 import Dialog from '@material-ui/core/Dialog';
 import ModalContent from './ModalContent';
-
+import Snackbar from '@material-ui/core/Snackbar';
 
 class Footer extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            modalOpen: true
+            modalOpen: false,
+            showNoti: false,
+            notiMessage: ''
         };
     }
 
@@ -24,6 +26,26 @@ class Footer extends Component {
         this.setState({
             modalOpen: false
         });
+    }
+
+    showNotification = (isSuccess) => {
+        if (isSuccess) {
+            this.setState({
+                showNoti: true,
+                notiMessage: "Email Sent!"
+            });
+        } else {
+            this.setState({
+                showNoti: true,
+                notiMessage: "Sorry, there was an error. Please try again later."
+            });
+        }
+    }
+
+    closeNoti = () => {
+        this.setState({
+            showNoti: false
+        })
     }
 
     render() {
@@ -41,9 +63,18 @@ class Footer extends Component {
                     </span>
                 </footer>
                 <Dialog open={this.state.modalOpen} onClose={this.onModalClose}>
-                
-                    <ModalContent handleClose={this.onModalClose} />
+                    <ModalContent handleClose={this.onModalClose} showNotification={this.showNotification} />
                 </Dialog>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                    message={<span id="message-id">{this.state.notiMessage}</span>}
+                    open={this.state.showNoti}
+                    autoHideDuration={4000}
+                    onClose={this.closeNoti}
+                    />
             </div>
         );
     }
