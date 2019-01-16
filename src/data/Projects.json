@@ -4,7 +4,8 @@
             "title": "Portfolio",
             "tech": [
                 "React",
-                "AWS Lambda"
+                "Google App Engine",
+                "Google Cloud Functions"
             ],
             "image": "portfolio.png",
             "image_alt": "picture for portfolio",
